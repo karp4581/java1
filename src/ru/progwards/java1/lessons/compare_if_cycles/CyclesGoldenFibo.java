@@ -5,15 +5,16 @@ public class CyclesGoldenFibo {
     public static double T = 1.61703d;
 
     public static boolean containsDigit(int number, int digit) {
-        int i = 0;
         int k;
         do {
-            i++;
             k = number % 10;
+
+            if (k == digit)
+                return true;
             number = number / 10;
         }
-        while (i < number);
-        return (k == digit);
+        while (number > 0);
+        return false;
     }
 
     public static int fiboNumber(int n) {
@@ -29,11 +30,11 @@ public class CyclesGoldenFibo {
     public static boolean isGoldenTriangle(int a, int b, int c) {
         boolean n = false;
         if (c > a & a == b)
-            n = (a / c < U || a / c > T);
+            n = (a / c <= U & a / c >= T);
         else if (a > b & b == c)
-            n = (c / a <= U || b / a >= T);
+            n = (c / a <= U & b / a >= T);
         else if (b > a & a == c)
-            n = (c / b <= U || a / b >= T);
+            n = (c / b <= U & a / b >= T);
         return n;
     }
 
@@ -49,7 +50,7 @@ public class CyclesGoldenFibo {
             System.out.println(isGoldenTriangle(result, prev, prev));
         }
 
-        System.out.println(containsDigit(234567, 3));
+
     }
 
 }
