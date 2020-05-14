@@ -18,7 +18,7 @@ public class CyclesGoldenFibo {
     }
 
     public static int fiboNumber(int n) {
-        int prev = 0, next = 1, result = 2;
+        int prev = 0, next = 1, result = 1;
         for (int i = 1; i < n; i++) {
             result = prev + next;
             prev = next;
@@ -29,18 +29,21 @@ public class CyclesGoldenFibo {
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
         boolean n = false;
-        if (c > a & a == b)
-            n = (a / c <= U & a / c >= T);
-        else if (a > b & b == c)
-            n = (c / a <= U & b / a >= T);
-        else if (b > a & a == c)
-            n = (c / b <= U & a / b >= T);
+        if (c > a & c == b)
+            n = (c / a <= U && b / a >= T);
+        else if (a > b & a == c)
+            n = (c / b <= U && a / b >= T);
+        else if (b > c & b == a)
+            n = (c / b <= U && a / b >= T);
         return n;
     }
 
 
     public static void main(String[] args) {
-        System.out.println(fiboNumber(5));
+        System.out.println(fiboNumber(10));
+        System.out.println(fiboNumber(0));
+        System.out.println(fiboNumber(1));
+        System.out.println(fiboNumber(2));
         int prev = 0, next = 1, result;
         for (int i = 1; i < 15; i++) {
             result = prev + next;
