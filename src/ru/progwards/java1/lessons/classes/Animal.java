@@ -35,7 +35,7 @@ public class Animal {
         return "I am" + "," + getKind()   + "eat" + getFoodKind();
     }
 
-   public static class Cow extends Animal {
+   public class Cow extends Animal {
        public Cow(double weight) {
            super(weight);}
 
@@ -48,7 +48,7 @@ public class Animal {
 
    }
 
-    public static class Hamster extends Animal {
+    public class Hamster extends Animal {
         public Hamster(double weight) {
             super(weight);
         }
@@ -59,7 +59,7 @@ public class Animal {
         @Override
         public double getFoodCoeff() {return 0.03;}
           }
-    public static class Duck extends Animal {
+    public class Duck extends Animal {
         public Duck(double weight) {
             super(weight);
         }
@@ -74,13 +74,5 @@ public class Animal {
         System.out.println(animal);
         System.out.println(animal.toStringFull());
 
-    }
-    public static void main(String[] args) {
-Cow cow = new Cow(100.0);
-Hamster hamster = new Hamster(5.0);
-Duck duck = new Duck(3.1);
-       printInfo(cow);
-        printInfo(hamster);
-        printInfo(duck);
-
     }}
+
