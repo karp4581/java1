@@ -19,12 +19,12 @@ public class Animal {
         public AnimalKind getKind () {return AnimalKind.ANIMAL;}
         public FoodKind getFoodKind() {return FoodKind.UNKNOWN;}
     public String toStringFull(){
-        return "I am" + "," + " " + getKind() + " "  + "eat" + " " + getFoodKind() + " " + calculateFoodWeight();
+        return "I am" + " " + getKind() + "," + " "  + "eat" + " " + getFoodKind() + " " + calculateFoodWeight();
     }
 
     @Override
     public String toString() {
-        return "I am" + "," + " " + getKind()  + " " + "eat" + " " + getFoodKind();
+        return "I am" + " " + getKind()  + "," + " " + "eat" + " " + getFoodKind();
     }
 
         public static void printInfo (Animal animal) {
